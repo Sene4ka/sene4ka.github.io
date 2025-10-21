@@ -1,0 +1,74 @@
+@use 'base/header';
+@use 'base/footer';
+@use 'base/buttons';
+@use 'base/titles';
+@use 'base/form';
+@use 'base/paddings';
+@use 'base/errors';
+@use 'homepage/promo';
+@use 'homepage/about';
+@use 'homepage/works';
+@use 'catalog/catalog';
+@use 'about/about_us';
+@use 'about/find';
+@use 'blog/blog';
+@use 'utils/variables' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+h1,
+h2,
+h3,
+h4,
+h5,
+figure,
+p,
+ol,
+ul {
+  margin: 0;
+}
+
+ol[role="list"],
+ul[role="list"] {
+  list-style: none;
+  padding-inline: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+img {
+  display: block;
+  max-inline-size: 100%;
+}
+
+html {
+  font-family: $font-main;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: $color-light;
+  overflow-x: hidden;
+}
+
+.fade-in{
+  opacity:1;
+  transform: translateY(0);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-out{
+  opacity:0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+
