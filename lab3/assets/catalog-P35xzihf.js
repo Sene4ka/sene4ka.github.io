@@ -1,4 +1,4 @@
-import"./menu-rbf2i1tG.js";const i="https://ceramic-api.onrender.com";function n(t){return`
+import"./menu-Ct8tZCCw.js";const i="https://ceramic-api.onrender.com";function n(t){return`
         <article class="catalog__item">
             <img src="${new URL(t.image,i)}" alt="${t.title}" loading="lazy">
             <div class="catalog__info">

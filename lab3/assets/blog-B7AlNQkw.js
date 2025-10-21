@@ -1,4 +1,4 @@
-import"./menu-rbf2i1tG.js";const o="https://ceramic-api.onrender.com";function n(t){return`
+import"./menu-Ct8tZCCw.js";const o="https://ceramic-api.onrender.com";function n(t){return`
     <article class="blog__item">
       <img 
         src="${new URL(t.image,o)}" 
