@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Catalog</title>
+    <link rel="icon" type="image/x-icon" href="/lab3/assets/logo-CfmnIxjE.png"/>
+    <script src="../src/js/catalog.js"></script>
+    <script src="../src/js/animations.js"></script>
+    <script src="../src/js/menu.js"></script>
+  <link rel="stylesheet" crossorigin href="/lab3/assets/style-CtM0_Wvq.css">
+</head>
+<body>
+<section class="padded-container header-container">
+    <header class="header">
+        <div class="burger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </div>
+
+        <div class="header__grid">
+            <a href="../" class="header__logo">
+                <img src="/lab3/assets/logo-CfmnIxjE.png" alt="logo"/>
+            </a>
+            <nav class="header__nav">
+                <div class="nav-item nav-item--1">
+                    <a href="../catalog/" class="nav-link">CATALOG</a>
+                </div>
+                <div class="nav-item nav-item--2">
+                    <a href="../blog/" class="nav-link">BLOG</a>
+                </div>
+                <div class="nav-item nav-item--3">
+                    <a href="../about/" class="nav-link">ABOUT</a>
+                </div>
+            </nav>
+        </div>
+
+        <div class="header__icons">
+            <a href="" aria-label="Search">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFqSURBVHgBrVTbbYQwEFxe/5cOEA+Jv5AKwlVw6SCkgigVQCpIroKjg5QQWsg/EqQD/nllNjHSiRifdWIkaxewx+vZMUQbw1B9dF13h8CjbZqmpWsJPc9LDcN4RJrM76ZpakzTPPZ9X6jIjWVFlmWdmAgE7+M4liBukN+ALEaeISe834O0uUjo+/4HFsRrC+YNxZw7WaXm+TERHlS7M8EwDE9IW1T8Riqguk+QnkgDQRAkmD+JpskrBBJUV5AGqqoquUqMeykhdnI5cgNIHy30XK3wV1zuJuljBz3lTRHdYp8dNIgoDMOY/gz/JSUU1RUIqUzoJaD1M0Ipc4N5NukIDQm6KO2ADue8sbAPrRLysR3H2SNNYJ+arbEgSoTxM362bTuVEf67y1EUuV3X8SJe0Iox/yRK6PyC6g44TY7xCgvlSsIZQstbSODyM9/ruq6/5+84RbZGejWYlG+M0HUbzKQ67tDGpmRL/ABVfLAMIuzY7QAAAABJRU5ErkJggg==" alt="Search">
+            </a>
+            <a href="" aria-label="Shopping cart">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAE8SURBVHgBzZPfUYNAEMYXkGexg5XhgUetwEsltqAdpANLSAvpQO3ABhivA5NX/votLg4X7zLEyYx+MzccH+yP3WWP6C/EzJmsJe9Gxx6WZclN02ywNWptu657tFAoJqYjAuxpGIYMEIN1iz0nSbKh32QoJSL4Q0BI6E28oigMoM/wruDtfHEX8xspsa5rM6YexxmCKU3TuzzPb/SVsY/w7uHtZd/3/XYOd4Bt23IURVKSFZgGPMAb9x6Psd6xXieG00PpFy67qqquUdZKg43c+zz5MNrCwZIn4Mx6gbcnVz7PD4QuJ6COxmr+0OdpEt86HJsMvfH+vYAs6Y8KAU/Vj487QGTHKMHSaUAOAs+hQyDTV18WSapBVWftocgB+uZQzjHTAuF4ypBzEKjprzH9a1ogPYo2CJQjRf9NnwOipjp0rU1BAAAAAElFTkSuQmCC" alt="Shopping Bag">
+            </a>
+        </div>
+
+        <nav class="mobile-menu" aria-label="Mobile navigation">
+            <div class="mobile-menu__backdrop"></div>
+            <div class="mobile-menu__panel">
+                <button class="mobile-menu__close" aria-label="Close menu">✕</button>
+                <ul class="mobile-menu__list">
+                    <li><a href="../catalog/">CATALOG</a></li>
+                    <li><a href="../blog/">BLOG</a></li>
+                    <li><a href="../about/">ABOUT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+</section>
+
+<section class="padded-container catalog">
+    <h2 class="title-h2-bold catalog__title">
+        Our pottery
+    </h2>
+
+    <div class="catalog__filters">
+        <button class="catalog__filter active" data-category="tea">For Tea</button>
+        <button class="catalog__filter" data-category="kitchen">For Kitchen</button>
+        <button class="catalog__filter" data-category="plants">For Plants</button>
+    </div>
+
+    <div class="catalog__grid">
+    </div>
+</section>
+
+<section>
+    <footer class="padded-container footer">
+        <div class="footer__container">
+            <div class="footer__newsletter">
+                <h4 class="footer__title">Newsletter</h4>
+                <h6 class="footer__subtitle">Keep up to date with news and promotions</h6>
+
+                <form class="footer__form" novalidate>
+                    <label for="footer-email"></label>
+                    <input type="email" id="footer-email" placeholder="Enter your e-mail" required>
+                    <div class="email-error-message"></div>
+
+                    <div class="checkbox">
+                        <input type="checkbox" id="footer-terms" required>
+                        <label for="footer-terms">I agree with the <a href="#">terms</a></label>
+                    </div>
+                    <div class="check-error-message"></div>
+
+                    <button class="btn-footer footer__btn">Submit</button>
+                </form>
+            </div>
+
+            <div class="footer__cols">
+                <div class="footer__links">
+                    <h4 class="footer__subtitle-small">Discover</h4>
+                    <ul>
+                        <li><a href="about/">About Us</a></li>
+                        <li><a href="blog/">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer__links">
+                    <h4 class="footer__subtitle-small">Shopping</h4>
+                    <ul>
+                        <li><a href="catalog/">Catalog</a></li>
+                    </ul>
+                </div>
+                <div class="footer__links">
+                    <h4 class="footer__subtitle-small">Information</h4>
+                    <ul>
+                        <li><a href="">Terms and Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__social">
+                <h4 class="footer__subtitle-small">Follow us</h4>
+                <div class="footer__social-icons" aria-hidden="false">
+                    <a href="#" class="footer_icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADvSURBVHgB3ZVtEcIwDIZTDgF1ABKQgAPmABxMAnMwHCBhSMABc9A5QEJIb4P1eulX2K89d/nTvcnbrL0UYNUgoqaoKToKgzOvae0MUii5onhjGlNsRAk3LKfJLd6gnDZV/JIqQLHzcnyqmIGJFL8HcnzsuWnJ7g+ZBpb6+33jaE8QQSnVc50G5EfOYA/5pLS/bhXMu8JYBnWQrXX121yh1Mz9RQMsx8AZ9LAcPWfw5JTcbXHvI/A8uEIaI8MtZMBgIASOE/Rfg/hkxXHeSA2ukIMVCgxaKAHH2WQyDOy5VSBlMuq8NWtsn0z7nGpYNR9CGa7QS5VEtgAAAABJRU5ErkJggg==" alt="facebook"></a>
+                    <a href="#" class="footer_icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEgSURBVHgB3VXtEYIwDM05QUdgA91ANoENcIO6Sd3AEXQD2IARcIMYID1zXPoBnD/03eUKzeM9kpYC8HdARENxpegxHy2FoyhS4sVK4SX6oMlC/E5xhvyqT1yBNzEayRMcrADxS4oK59beWcNqxJaTJ1gBUXXDZlMVGnFC5C0fFAPTxuuKc47nj1GdUALnHRXCNftFtQTd1kLMcp/HuIj5co/Bg6cbhW99u/YYeBiFbzg3xHQOEMcL0jCxZMqg47FRcjWPT8hBoEWlaNNFLLLcWVVKJ5oQi6nB5uqkPrRa7KiBr88BbtCg51wJG4HzoTei9XNykW88NrAd/tlOczeiCocrDj3eDP4kHTWKELHAb/1wFiYOP8d3rrBF7Ufz83gDZnAQmwHjZVMAAAAASUVORK5CYII=" alt="instagram"></a>
+                    <a href="#" class="footer_icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFWSURBVHgB3VVtccQgECWnAAeNg8ZBIyEOcg6uDjgHqYOcA+ogdZA6oA7aKtjC9KXdcAsk9/PezA4MvLdfAaLUXYOItLejN+vN0T9mrPXqVnhx5+2TynC7A3nBC+3HeavzcyZTC5sSnKHk/CiIgsMngVt7MwK/ywVwEdmwvRYODXfi5w2tv1WY6y3ZjyzTWcjUhT1wnqO9XgpgI1IdVTWFoBFnYnpehZUC8Cwda8tfNYlEHrA+xvqAA4vRsPkHxkeMryqNOrd2KIi+MepEIinONej6BGlY6K0Bp404jul5i2epgvcopqmq6suPb2wvvg8XOG+U3OJVBdIlG1FBvThilQ5MO0U68Zgu7aBMG5ZAmmkuKb4UpBMCWOy1yP6EaodEQvmXFUKOE9ZHKsOoLaD1I9ZjzRWcD2oP0IbgtCf5ACwIberUraDfDxnatnpKCL9Mkl7Ou8IPgPqtYcCkIfgAAAAASUVORK5CYII=" alt="pinterest"></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">© Copyright 2025, Ceramic soul</div>
+    </footer>
+</section>
+</body>
+</html>
