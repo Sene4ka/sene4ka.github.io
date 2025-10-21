@@ -58,16 +58,6 @@
     padding: 10px 1px;
     font-size: 14px;
     outline: none;
-
-    &:invalid:not(:focus):not(:placeholder-shown) {
-      border-color: $color-ui-error;
-      color: $color-ui-error;
-    }
-
-    &:valid:not(:placeholder-shown) {
-      border-color: $color-ui-valid;
-      color: $color-ui-valid;
-    }
   }
 
   .footer__form input,
