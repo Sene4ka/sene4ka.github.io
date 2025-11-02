@@ -1,0 +1,19 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+
+.title-h1-bold {
+  @include title(40px);
+}
+
+.title-h2-bold {
+  @include title(32px);
+}
+
+.title-h3-bold {
+  @include title(24px);
+}
+
+.title-h1-italic {
+  @include title(24px, italic);
+  font-weight: 400;
+}

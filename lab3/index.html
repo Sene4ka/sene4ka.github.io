@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Ceramic soul</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="src/scss/style.scss"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script type="module" src="src/js/menu.js"></script>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+</head>
+<body>
+<section class="promo">
+    <img class="promo__potter" src="src/img/homepage/promo/potter.png" alt="potter"/>
+    <div class="padded-container promo__container">
+        <header class="header">
+            <div class="burger" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </div>
+
+            <div class="header__grid">
+                <a href="" class="header__logo">
+                    <img src="src/icons/logo.png" alt="logo"/>
+                </a>
+                <nav class="header__nav">
+                    <div class="nav-item nav-item--1">
+                        <a href="catalog/" class="nav-link">CATALOG</a>
+                    </div>
+                    <div class="nav-item nav-item--2">
+                        <a href="blog/" class="nav-link">BLOG</a>
+                    </div>
+                    <div class="nav-item nav-item--3">
+                        <a href="about/" class="nav-link">ABOUT</a>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="header__icons">
+                <a href="" aria-label="Search">
+                    <img src="src/icons/search-outline.png" alt="Search">
+                </a>
+                <a href="" aria-label="Shopping cart">
+                    <img src="src/icons/shopping-bag.png" alt="Cart">
+                </a>
+            </div>
+
+            <nav class="mobile-menu" aria-label="Mobile navigation">
+                <div class="mobile-menu__backdrop"></div>
+                <div class="mobile-menu__panel">
+                    <button class="mobile-menu__close" aria-label="Close menu">✕</button>
+                    <ul class="mobile-menu__list">
+                        <li><a href="../catalog/">CATALOG</a></li>
+                        <li><a href="../blog/">BLOG</a></li>
+                        <li><a href="../about/">ABOUT</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <div class="promo__content">
+            <h1 class="title-h1-italic promo__title">
+                Make your dream come true or decorate your home
+            </h1>
+            <img class="img-shadowed promo__img" src="src/img/homepage/promo/ceramic-vase.png" alt="Ceramic vase"/>
+            <button class="btn-default promo__btn">shop now</button>
+        </div>
+    </div>
+</section>
+
+<section class="about">
+    <h2 class="title-h2-bold about__title">
+        Create or buy
+    </h2>
+    <div class="about__content">
+        <div class="about__container">
+            <h3 class="title-h3-bold about__subtitle">
+                Our store
+            </h3>
+            <div class="about__media">
+                <img
+                        src="src/img/homepage/about/store.png"
+                        alt="store"
+                        class="img-shadowed about__img"
+                />
+                <p class="about__paragraph">
+                    Welcome to <span class="about__paragraph-highlight">Ceramic Soul</span>, where each piece tells a
+                    story
+                    of
+                    craftsmanship and creativity. Our handmade ceramics
+                    are thoughtfully designed and carefully crafted, blending traditional techniques with modern
+                    aesthetics.
+                    Whether
+                    you're looking for a unique gift or a special addition to your home, our collection offers timeless
+                    pieces
+                    that
+                    bring warmth and authenticity to any space.
+                </p>
+            </div>
+        </div>
+        <div class="about__container">
+            <h3 class="title-h3-bold about__subtitle">
+                Our workshop
+            </h3>
+            <div class="about__media">
+                <img
+                        src="src/img/homepage/about/ceramic.png"
+                        alt="ceramic"
+                        class="img-shadowed about__img"
+                />
+                <p class="about__paragraph">
+                    At <span class="about__paragraph-highlight">Ceramic Soul</span> workshop, we don’t just craft
+                    ceramics—we
+                    invite
+                    you to get hands-on and create your own unique
+                    pieces. Through our engaging masterclasses, you’ll learn traditional techniques, work with natural
+                    materials,
+                    and experience the joy of shaping clay into something truly personal.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="form">
+    <h2 class="title-h2-bold form__title">Get in touch</h2>
+
+    <div class="form__wrapper">
+        <div class="form__image">
+            <img src="src/img/form/tea.png" alt="tea">
+        </div>
+
+        <div class="form__content">
+            <form class="contact__form" novalidate>
+                <div class="form__row">
+                    <div class="form__field">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Name" required>
+                        <div class="error-message name-error"></div>
+                    </div>
+
+                    <div class="form__field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Email" required>
+                        <div class="error-message email-error"></div>
+                    </div>
+                </div>
+
+                <div class="form__field">
+                    <label for="question">Your question</label>
+                    <textarea id="question" placeholder="Question"></textarea>
+                    <div class="error-message question-error"></div>
+                </div>
+
+                <div class="form__checkbox">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I agree with the <a href="">terms</a></label>
+                </div>
+                <div class="error-message terms-error"></div>
+
+                <button class="btn-default form__btn">Send request</button>
+            </form>
+        </div>
+
+        <div class="form__logo">
+            <img src="src/icons/vase.png" alt="vase logo">
+        </div>
+    </div>
+</section>
+
+<section class="works">
+    <h2 class="title-h2-bold works__title">
+        Check out our works
+    </h2>
+
+    <div class="swiper works-swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="src/img/homepage/works/tea-1.png" alt="Work 1" loading="lazy">
+            </div>
+            <div class="swiper-slide">
+                <img src="src/img/homepage/works/tea-2.png" alt="Work 2" loading="lazy">
+            </div>
+            <div class="swiper-slide">
+                <img src="src/img/homepage/works/tea-3.png" alt="Work 3" loading="lazy">
+            </div>
+            <div class="swiper-slide">
+                <img src="src/img/homepage/works/tea-1.png" alt="Work 4" loading="lazy">
+            </div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</section>
+
+<section>
+    <footer class="padded-container footer">
+        <div class="footer__container">
+            <div class="footer__newsletter">
+                <h4 class="footer__title">Newsletter</h4>
+                <h6 class="footer__subtitle">Keep up to date with news and promotions</h6>
+
+                <form class="footer__form" novalidate>
+                    <label for="footer-email"></label>
+                    <input type="email" id="footer-email" placeholder="Enter your e-mail" required>
+                    <div class="email-error-message"></div>
+
+                    <div class="checkbox">
+                        <input type="checkbox" id="footer-terms" required>
+                        <label for="footer-terms">I agree with the <a href="">terms</a></label>
+                    </div>
+                    <div class="check-error-message"></div>
+
+                    <button class="btn-footer footer__btn">Submit</button>
+                </form>
+            </div>
+
+            <div class="footer__cols">
+                <div class="footer__links">
+                    <h4 class="footer__subtitle-small">Discover</h4>
+                    <ul>
+                        <li><a href="about/">About Us</a></li>
+                        <li><a href="blog/">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer__links">
+                    <h4 class="footer__subtitle-small">Shopping</h4>
+                    <ul>
+                        <li><a href="catalog/">Catalog</a></li>
+                    </ul>
+                </div>
+                <div class="footer__links">
+                    <h4 class="footer__subtitle-small">Information</h4>
+                    <ul>
+                        <li><a href="">Terms and Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__social">
+                <h4 class="footer__subtitle-small">Follow us</h4>
+                <div class="footer__social-icons" aria-hidden="false">
+                    <a href="" class="footer_icon"><img src="src/icons/facebook.png" alt="facebook"></a>
+                    <a href="" class="footer_icon"><img src="src/icons/instagram.png" alt="instagram"></a>
+                    <a href="" class="footer_icon"><img src="src/icons/pinterest.png" alt="pinterest"></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">© Copyright 2025, Ceramic soul</div>
+    </footer>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script type="module" src="src/js/swiper.js"></script>
+<script type="module" src="src/js/validation.js"></script>
+</body>
+</html>

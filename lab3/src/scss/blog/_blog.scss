@@ -1,0 +1,190 @@
+@use '../utils/variables' as *;
+
+.blog {
+  &__title {
+    margin: 80px 0;
+  }
+
+  &__grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 35px;
+    justify-items: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -10px;
+      top: -10px;
+      width: 200px;
+      height: 200px;
+      border-top: 1px solid $color-dark;
+      border-left: 1px solid $color-dark;
+      pointer-events: none;
+      z-index: 1;
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "img"
+      "title"
+      "btn"
+      "text";
+    background: $color-light;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    border: 1px solid $color-dark;
+    overflow: hidden;
+    gap: 20px;
+    width: 100%;
+    max-width: 670px;
+    transition: transform 0.25s ease;
+    position: relative;
+    z-index: 2;
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+
+    &-img {
+      grid-area: img;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    &-title {
+      grid-area: title;
+      padding: 20px 20px 0;
+      margin: 0;
+      align-self: start;
+      text-align: left;
+    }
+
+    &-button {
+      grid-area: btn;
+      padding: 10px 25px;
+      margin: 10px 0 0 20px;
+      align-self: end;
+      justify-self: start;
+      cursor: pointer;
+      border: 1px solid $color-dark;
+      color: $color-dark;
+      background: transparent;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.25s ease;
+      max-width: calc(100% - 40px);
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+
+    &-text {
+      grid-area: text;
+      padding: 0 20px 20px;
+      font-size: 16px;
+      font-weight: 400;
+      margin: 0;
+      line-height: 1.4;
+      text-align: left;
+      align-self: start;
+      display: block;
+      overflow: visible;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .blog {
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+
+    &__item {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "img title"
+        "img btn"
+        "text text";
+      grid-template-rows: 1fr 1fr auto;
+      max-width: 100%;
+      gap: 0;
+      height: 400px;
+      align-items: start;
+
+      &-img {
+        grid-area: img;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      &-title {
+        grid-area: title;
+        padding: 30px 20px 0;
+        text-align: left;
+        max-width: 100%;
+      }
+
+      &-button {
+        grid-area: btn;
+        align-self: end;
+        justify-self: start;
+        margin: 0 0 0 20px;
+        padding: 10px 25px;
+        border: 1px solid $color-dark;
+        color: $color-dark;
+        background: transparent;
+        transition: all 0.25s ease;
+        max-width: calc(100% - 40px);
+
+        &:active {
+          transform: translateY(0);
+        }
+      }
+
+      &-text {
+        grid-area: text;
+        padding: 20px;
+        display: block;
+        overflow: visible;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .blog {
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+
+      &::before {
+        left: -20px;
+        top: -20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .blog {
+    &__grid::before {
+      display: none;
+    }
+
+    &__item-button {
+      max-width: calc(100% - 40px);
+    }
+  }
+}
+
+
+
+

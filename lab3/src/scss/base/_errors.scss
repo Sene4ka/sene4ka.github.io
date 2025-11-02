@@ -1,0 +1,35 @@
+@use '../utils/variables' as *;
+
+.email-error-message {
+  color: $color-ui-error;
+  font-size: 16px;
+  font-weight: 500;
+  min-height: 16px;
+  margin-top: 16px;
+}
+
+.check-error-message {
+  color: $color-ui-error;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.error-message {
+  display: block;
+  color: $color-ui-error;
+  font-size: 16px;
+  margin-top: 4px;
+}
+
+.terms-error {
+  margin-top: -16px;
+}
+
+.just-validate-error-field {
+  border: 1px solid $color-ui-error !important;
+  outline: none;
+}
+
+.just-validate-success-field {
+  border: 1px solid $color-ui-disabled !important;
+}

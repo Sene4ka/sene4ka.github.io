@@ -1,0 +1,27 @@
+@use "variables" as *;
+
+@mixin title($font-size, $font-style: normal) {
+  color: $color-dark;
+  font-size: $font-size;
+  font-style: $font-style;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@mixin button($width, $height, $color, $font-size) {
+  width: $width;
+  height: $height;
+  display: block;
+  background-color: transparent;
+  border-radius: 2px;
+  border: 1px solid $color;
+  text-align: center;
+  color: $color;
+  font-size: $font-size;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}

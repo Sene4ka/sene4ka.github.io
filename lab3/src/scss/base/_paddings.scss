@@ -1,0 +1,16 @@
+.padded-container {
+  @media (min-width: 360px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  @media (min-width: 768px) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  @media (min-width: 1200px) {
+    padding-left: calc(30px + (240px - 30px) * ((min(1920px, 100vw) - 1200px) / (1920px - 1200px)));
+    padding-right: calc(30px + (240px - 30px) * ((min(1920px, 100vw) - 1200px) / (1920px - 1200px)));
+  }
+}
