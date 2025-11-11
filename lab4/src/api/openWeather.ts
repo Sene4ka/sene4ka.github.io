@@ -10,7 +10,7 @@ const client = axios.create({
 
 const hasKey = !!KEY;
 
-const mockGeocode = async (q: string, limit = 5) => {
+const mockGeocode = async (limit = 5) => {
     const cities = [
         { name: 'Athens', lat: 37.9838, lon: 23.7275, country: 'GR' },
         { name: 'Athens', lat: 33.95, lon: -83.38, country: 'US', state: 'Georgia' },
@@ -21,35 +21,12 @@ const mockGeocode = async (q: string, limit = 5) => {
     return cities.slice(0, limit);
 };
 
-const mockCurrent = async (lat: number, lon: number, units = 'metric', lang = 'en') => {
-    return {
-        coord: { lat, lon },
-        weather: [{ id: 800, main: 'Clear', description: 'clear sky', icon: '01d' }],
-        main: { temp: 24, feels_like: 22, humidity: 41, pressure: 997 },
-        wind: { speed: 2 },
-        sys: { sunrise: 1629884220, sunset: 1629930420 },
-        name: 'Athens',
-    };
-};
-
-const mockForecast = async (lat: number, lon: number, units = 'metric', lang = 'en') => {
-    const now = Math.floor(Date.now() / 1000);
-    const list = [0, 6, 12, 18, 24].map((h, i) => ({
-        dt: now + h * 3600,
-        main: { temp: 24 + (i % 3), temp_min: 20 + i, temp_max: 26 + i },
-        weather: [{ id: 800, main: 'Clear', description: 'clear sky', icon: '01d' }],
-        wind: { speed: 3 + i },
-        dt_txt: new Date((now + h * 3600) * 1000).toISOString(),
-    }));
-    return { list };
-};
-
 export const geocode = async (q: string, limit = 5) => {
     console.log(`[API] geocode called: "${q}", limit: ${limit}, hasKey: ${hasKey}`);
 
     if (!hasKey) {
         console.warn('[API] Using MOCK data (no API key)');
-        return mockGeocode(q, limit);
+        return mockGeocode(limit);
     }
 
     try {
@@ -67,7 +44,7 @@ export const reverseGeocode = async (lat: number, lon: number) => {
 
     if (!hasKey) {
         console.warn('[API] Using MOCK data (no API key)');
-        return mockGeocode('', 1);
+        return mockGeocode(1);
     }
 
     try {
@@ -78,33 +55,3 @@ export const reverseGeocode = async (lat: number, lon: number) => {
         return null;
     }
 };
-
-export const getCurrentWeather = async (lat: number, lon: number, units = 'metric', lang = 'en') => {
-    console.log(`[API] getCurrentWeather called: ${lat}, ${lon}`);
-
-    try {
-        const { data } = await client.get('/data/2.5/weather', { params: { lat, lon, units, lang } });
-        return data;
-    } catch (error) {
-        console.error('[API] Current weather error:', error);
-        return null;
-    }
-};
-
-export const getForecast5 = async (lat: number, lon: number, units = 'metric', lang = 'en') => {
-    console.log(`[API] getForecast5 called: ${lat}, ${lon}, hasKey: ${hasKey}`);
-
-    if (!hasKey) {
-        console.warn('[API] Using MOCK forecast data');
-        return mockForecast(lat, lon, units, lang);
-    }
-
-    try {
-        const { data } = await client.get('/data/2.5/forecast', { params: { lat, lon, units, lang } });
-        return data;
-    } catch (error) {
-        console.error('[API] Forecast error:', error);
-        return { list: [] };
-    }
-};
-
