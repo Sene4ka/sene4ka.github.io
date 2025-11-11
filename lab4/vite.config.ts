@@ -6,4 +6,9 @@ export default defineConfig({
     plugins: [react()],
     base: '/lab4/',
     publicDir: 'public',
+    build: {
+        outDir: 'dist',
+        sourcemap: true,
+        emptyOutDir: true
+    }
 })

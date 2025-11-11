@@ -17,8 +17,7 @@ export function useWeather(coords: Coords | null, units: Units, lang: Lang) {
         : null;
 
     const aqiUrl = coords
-        ? `https://api.openweathermap.org/data/2.5/air_pollution?lat=${coords.lat}&lon=${coords.lon}
-        &appid=${import.meta.env.VITE_OWM_API_KEY}`
+        ? `https://api.openweathermap.org/data/2.5/air_pollution?lat=${coords.lat}&lon=${coords.lon}&appid=${import.meta.env.VITE_OWM_API_KEY}`
         : null;
 
     const { data: weather, loading: weatherLoading, error: weatherError } = useFetchJson<CurrentWeather>(weatherUrl,
