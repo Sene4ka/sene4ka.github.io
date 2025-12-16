@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { City } from '../types';
 
 const BASE = 'https://api.openweathermap.org';
 const KEY = import.meta.env.VITE_OWM_API_KEY;
@@ -21,37 +22,26 @@ const mockGeocode = async (limit = 5) => {
     return cities.slice(0, limit);
 };
 
-export const geocode = async (q: string, limit = 5) => {
-    console.log(`[API] geocode called: "${q}", limit: ${limit}, hasKey: ${hasKey}`);
-
-    if (!hasKey) {
-        console.warn('[API] Using MOCK data (no API key)');
-        return mockGeocode(limit);
-    }
-
-    try {
-        const { data } = await client.get('/geo/1.0/direct', { params: { q, limit } });
-        console.log('[API] Geocode success:', data);
-        return data;
-    } catch (error) {
-        console.error('[API] Geocode error:', error);
-        return [];
-    }
-};
-
-export const reverseGeocode = async (lat: number, lon: number) => {
+export const reverseGeocode = async (
+    lat: number,
+    lon: number
+): Promise<City | null> => {
     console.log(`[API] reverseGeocode called: ${lat}, ${lon}, hasKey: ${hasKey}`);
 
     if (!hasKey) {
-        console.warn('[API] Using MOCK data (no API key)');
-        return mockGeocode(1);
+        const mock = await mockGeocode(1);
+        return mock[0] ?? null;
     }
 
     try {
-        const { data } = await client.get('/geo/1.0/reverse', { params: { lat, lon, limit: 1 } });
-        return data;
+        const response = await client.get<City[]>('/geo/1.0/reverse', {
+            params: { lat, lon, limit: 1 },
+        });
+
+        return response.data[0] ?? null;
     } catch (error) {
         console.error('[API] Reverse geocode error:', error);
         return null;
     }
 };
+

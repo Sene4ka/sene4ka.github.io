@@ -1,4 +1,3 @@
-import React from 'react';
 import { useGeolocation } from '../../hooks/useGeolocation';
 import { reverseGeocode } from '../../api/openWeather';
 import Icon from '../common/Icon';
