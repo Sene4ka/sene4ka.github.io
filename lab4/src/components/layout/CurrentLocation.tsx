@@ -2,13 +2,15 @@ import { useGeolocation } from '../../hooks/useGeolocation';
 import { reverseGeocode } from '../../api/openWeather';
 import Icon from '../common/Icon';
 import { City } from '../../types';
+import { useI18n } from '../../context/I18nContext'
 
 interface CurrentLocationButtonProps {
     onLocationSelect: (city: City) => void;
 }
 
 export default function CurrentLocation({ onLocationSelect }: CurrentLocationButtonProps) {
-    const { coords, error: geoError } = useGeolocation();
+    const { coords } = useGeolocation();
+    const { t } = useI18n()
 
     const handleClick = async () => {
         if (!coords) {
@@ -37,7 +39,7 @@ export default function CurrentLocation({ onLocationSelect }: CurrentLocationBut
             <Icon name="location" className="w-7 h-7"/>
 
             <span className="hidden sm:inline whitespace-nowrap">
-                {geoError ? 'Location Off' : 'Current Location'}
+                {t('search.current')}
             </span>
         </button>
     );
