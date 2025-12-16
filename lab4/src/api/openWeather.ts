@@ -22,6 +22,24 @@ const mockGeocode = async (limit = 5) => {
     return cities.slice(0, limit);
 };
 
+export const geocode = async (q: string, limit = 5) => {
+    console.log(`[API] geocode called: "${q}", limit: ${limit}, hasKey: ${hasKey}`);
+
+    if (!hasKey) {
+        console.warn('[API] Using MOCK data (no API key)');
+        return mockGeocode(limit);
+    }
+
+    try {
+        const { data } = await client.get('/geo/1.0/direct', { params: { q, limit } });
+        console.log('[API] Geocode success:', data);
+        return data;
+    } catch (error) {
+        console.error('[API] Geocode error:', error);
+        return [];
+    }
+};
+
 export const reverseGeocode = async (
     lat: number,
     lon: number
